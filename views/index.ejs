@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Randomuser API</title>
+        <link rel="stylesheet" href="/assets/css/style.css">
+    </head>
+    <body>
+        <header>
+            <a id="adicionar" href="/fetch-users">
+                Adiconar novo usuário
+            </a>
+        </header>
+        
+        <main>
+            
+            <section>
+                <ul>
+                    <% users.forEach((user) => { %>
+                    <li>
+                        <img
+                            src="<%= user.picture %>"
+                            alt="Foto/perfil de<%= user.name %>"
+                            width="150"
+                            height="150">
+
+                        <div>
+                            <p>
+                                Nome: <%= user.name %>
+                            </p>
+
+                            <p>
+                                Email: <%= user.email %>
+                            </p>
+
+                            <p>
+                                Data de Nascimento: <%= new
+                                Date(user.dob).toLocaleDateString() %>
+                            </p>
+
+                            <p>
+                                Idade: <%= user.age %>
+                            </p>
+                        </div>
+                    </li>
+                    <% }) %>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <a href="https://github.com/ViniciusNascimento2001">ViniciusNascimento2001</a>
+        </footer>
+    </body>
+</html>
